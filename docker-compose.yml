@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  frontend:
+    image: shopping-website-client
+    container_name: shopping-website-client
+    restart: on-failure
+    ports:
+      - "4200:80"
+volumes:
+  db-data:
