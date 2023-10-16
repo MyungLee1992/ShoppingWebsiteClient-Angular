@@ -26,11 +26,12 @@ export class LoginComponent implements OnInit {
         this.user = user;
         // Save token in local storage
         localStorage.setItem('jwtToken', token);
+        localStorage.setItem('currentUser', user.username);
 
         // Clear input fields
         loginForm.reset();
 
-        this.user = user;
+        window.location.reload();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

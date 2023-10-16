@@ -64,7 +64,7 @@ export class ItemComponent implements OnInit {
     )
   }
 
-  public onDeleteItem(itemId?: number): void {
+  public onDeleteItem(itemId?: string): void {
     if (itemId == null) {
       return;
     }

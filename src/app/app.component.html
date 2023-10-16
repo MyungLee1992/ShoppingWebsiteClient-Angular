@@ -9,8 +9,8 @@
 
             <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li *ngIf="login.user" class="nav-item nav-link">Welcome {{login.user?.username}}!</li>
-                  <li *ngIf="! login.user">
+                  <li *ngIf="username" class="nav-item nav-link">Welcome {{username}}!</li>
+                  <li *ngIf="! username">
                     <button type="button" class="btn nav-item nav-link" data-toggle="modal" data-target="#loginModal">
                       Login
                     </button>

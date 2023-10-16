@@ -14,7 +14,7 @@ export class ItemService {
     return this.http.get<Item[]>(`${this.apiServerUrl}/item/all`);
   }
 
-  public getItemById(itemId: Number): Observable<Item> {
+  public getItemById(itemId: string): Observable<Item> {
     return this.http.get<Item>(`${this.apiServerUrl}/item/find/${itemId}`);
   }
 
@@ -26,7 +26,7 @@ export class ItemService {
     return this.http.put<Item>(`${this.apiServerUrl}/item/update`, item);
   }
 
-  public deleteItem(itemId: Number): Observable<void> {
+  public deleteItem(itemId: string): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/item/delete/${itemId}`);
   }
 

@@ -17,8 +17,8 @@ export class AuthService {
     return this.http.post(`${this.apiServerUrl}/auth/login`, user, { responseType: 'text' });
   }
 
-  public getUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiServerUrl}/user`);
+  public getMe(): Observable<User> {
+    return this.http.get<User>(`${this.apiServerUrl}/auth`);
   }
 
   public getCurrentUser() {

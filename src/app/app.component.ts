@@ -8,13 +8,16 @@ import { AuthService } from './auth/services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit { 
-  user: User;
+  username: string;
 
-  constructor(authService: AuthService) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
-    
+    const username = localStorage.getItem('currentUser');
+    if (username != null) {
+      this.username = username;
+    }
   }
 
 }

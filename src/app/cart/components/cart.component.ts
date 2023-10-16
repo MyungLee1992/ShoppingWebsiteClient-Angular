@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
     );
   }
 
-  public onDeleteCartItem(cartItemId: Number): void {
+  public onDeleteCartItem(cartItemId: string): void {
     if (cartItemId == null) {
       return;
     }

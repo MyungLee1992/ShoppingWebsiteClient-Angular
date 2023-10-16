@@ -25,7 +25,7 @@ export class CartService {
     return this.http.put<CartItem>(`${this.apiServerUrl}/cart/update`, cartItem);
   }
 
-  public deleteCartItem(cartItemId: Number): Observable<void> {
+  public deleteCartItem(cartItemId: string): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/cart/delete/${cartItemId}`);
   }
 
@@ -33,7 +33,7 @@ export class CartService {
     return this.http.delete<void>(`${this.apiServerUrl}/cart/delete`);
   }
 
-  public getCartItem(itemId: Number): Observable<Item> {
+  public getCartItem(itemId: string): Observable<Item> {
     return this.http.get<Item>(`${this.apiServerUrl}/item/${itemId}`);
   }
 }
