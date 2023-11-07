@@ -11,23 +11,23 @@ export class ItemService {
   constructor(private http: HttpClient) { }
 
   public getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(`${this.apiServerUrl}/item/all`);
+    return this.http.get<Item[]>(`${this.apiServerUrl}/api/item/all`);
   }
 
   public getItemById(itemId: string): Observable<Item> {
-    return this.http.get<Item>(`${this.apiServerUrl}/item/find/${itemId}`);
+    return this.http.get<Item>(`${this.apiServerUrl}/api/item/find/${itemId}`);
   }
 
   public addItem(item: Item): Observable<Item> {
-    return this.http.post<Item>(`${this.apiServerUrl}/item/add`, item);
+    return this.http.post<Item>(`${this.apiServerUrl}/api/item/add`, item);
   }
 
   public updateItem(item: Item): Observable<Item> {
-    return this.http.put<Item>(`${this.apiServerUrl}/item/update`, item);
+    return this.http.put<Item>(`${this.apiServerUrl}/api/item/update`, item);
   }
 
   public deleteItem(itemId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/item/delete/${itemId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/item/delete/${itemId}`);
   }
 
 }

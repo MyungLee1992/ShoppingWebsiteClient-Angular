@@ -14,11 +14,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public login(user: User): Observable<string> {
-    return this.http.post(`${this.apiServerUrl}/auth/login`, user, { responseType: 'text' });
+    return this.http.post(`${this.apiServerUrl}/api/auth/login`, user, { responseType: 'text' });
   }
 
   public getMe(): Observable<User> {
-    return this.http.get<User>(`${this.apiServerUrl}/auth`);
+    return this.http.get<User>(`${this.apiServerUrl}/api/auth`);
   }
 
   public getCurrentUser() {

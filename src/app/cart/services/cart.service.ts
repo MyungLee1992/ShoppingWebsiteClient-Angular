@@ -14,26 +14,26 @@ export class CartService {
   constructor(private http: HttpClient) { }
 
   public getCartItems(): Observable<CartItem[]> {
-    return this.http.get<CartItem[]>(`${this.apiServerUrl}/cart`);
+    return this.http.get<CartItem[]>(`${this.apiServerUrl}/api/cart`);
   }
 
   public addCartItem(item: Item): Observable<CartItem> {
-    return this.http.post<CartItem>(`${this.apiServerUrl}/cart/add`, item);
+    return this.http.post<CartItem>(`${this.apiServerUrl}/api/cart/add`, item);
   }
 
   public updateCartItem(cartItem: CartItem): Observable<CartItem> {
-    return this.http.put<CartItem>(`${this.apiServerUrl}/cart/update`, cartItem);
+    return this.http.put<CartItem>(`${this.apiServerUrl}/api/cart/update`, cartItem);
   }
 
   public deleteCartItem(cartItemId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/cart/delete/${cartItemId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/cart/delete/${cartItemId}`);
   }
 
   public deleteCart(): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/cart/delete`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/cart/delete`);
   }
 
   public getCartItem(itemId: string): Observable<Item> {
-    return this.http.get<Item>(`${this.apiServerUrl}/item/${itemId}`);
+    return this.http.get<Item>(`${this.apiServerUrl}/api/item/${itemId}`);
   }
 }
